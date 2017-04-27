@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoutePackage.Views.AddNewPlace" Title="Nuevo lugar">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="Donde esta el nuevo lugar ?"></Label>
+        <StackLayout x:Name="mapContent" Grid.ColumnSpan="1" Grid.Row="1">
+
+        </StackLayout>
+        <StackLayout Grid.Row="2"
+                        Grid.ColumnSpan="1"
+                        Orientation="Horizontal" 
+                        Spacing="8"
+                        Padding="8"
+                        HorizontalOptions="Center">
+            <Button x:Name="ButtonStreet" Text="Calles" Clicked="OnStreetClicked"/>
+            <Button x:Name="ButtonHybrid" Text="Híbrido" Clicked="OnHybridClicked"/>
+            <Button x:Name="ButtonAddPin" Text="Agregar" Clicked="OnAddPinClicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

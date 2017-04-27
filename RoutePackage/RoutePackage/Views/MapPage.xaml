@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:RoutePackage;assembly=RoutePackage"
+             x:Class="RoutePackage.MapPage"
+             Title="Buscando">
+    
+    <!--<ContentPage.Content>
+        <local:CustomMap x:Name="myMap" MapType="Street" WidthRequest="{x:Static local:App.ScreenWidth}" HeightRequest="{x:Static local:App.ScreenHeight}" />
+    </ContentPage.Content>-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Entry 
+            Text=""
+            Placeholder="Necesito encontrar ..."
+            x:Name="EntryLocation"
+            Margin="10"/>
+        <Button 
+            Grid.Column="1" 
+            Text="Buscar !" 
+            x:Name="ButtonGoTo" 
+            Clicked="OnGoToClicked"
+            Margin="10"/>
+        <!--<Slider x:Name="SliderDistance" 
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Maximum="10.0" 
+                Minimum="1.0" 
+                Value="1.0"
+                ValueChanged="OnSliderDistanceChanged" />-->
+        <StackLayout x:Name="mapContent" Grid.ColumnSpan="2" Grid.Row="1">
+            
+        </StackLayout>
+        <Slider x:Name="SliderZoom" 
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Maximum="18.0" 
+                Minimum="1.0" 
+                Value="1.0"
+                ValueChanged="OnSliderChanged" />
+        <StackLayout Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Orientation="Horizontal" 
+                        Spacing="10"
+                        Padding="10"
+                        HorizontalOptions="Center">
+            <Button x:Name="ButtonStreet" Text="Calles" Clicked="OnStreetClicked"/>
+            <Button x:Name="ButtonHybrid" Text="Híbrido" Clicked="OnHybridClicked"/>
+            <Button x:Name="ButtonSatellite" Text="Satéllite" Clicked="OnSatelliteClicked"/>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
